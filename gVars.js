@@ -7,3 +7,12 @@ export const gameTypes = {
     "racing" : "Racing",
     "sim" : "Simulation"
 }
+
+export const gameStudios = {
+    "cap" : "Capcom",
+    "ubisoft" : "Ubisoft",
+    "ea" : "Electronic Arts",
+    "square" : "Square Enix",
+    "rock" : "Rockstar Games",
+    "bethesda" : "Bethesda Game Studios"
+}

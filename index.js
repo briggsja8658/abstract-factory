@@ -1,15 +1,20 @@
 
-import { gameTypes } from "./gVars.js"; 
+import { gameTypes, gameStudios } from "./gVars.js"; 
 import * as Tools from "./tools.js";
-import { Games } from "./classes/games.js"; 
+import { GameTypes } from "./classes/gameTypes.js"; 
+import { GameStudios } from "./classes/gameStudios.js"; 
 
 //This is a function that will run on its own, we need this so we have access to async
 (async()=>{
-    Tools.showNumJSONOptions(gameTypes);
-    var gameSelection = await Tools.userInput("Please select from the prior list: ");
-    gameSelection = Tools.getJSONValueByIndex(gameTypes, gameSelection);
-    var games = new Games();
-    var currentGame = games.makeGame(gameSelection);
-    console.log(currentGame);
+
+    Tools.showNumJSONStringOptions(gameStudios);
+    var studioSelection = await Tools.userInput("Please select from the prior list: ");
+    studioSelection = Tools.getJSONValueByIndex(gameStudios, studioSelection);
+    var gameStudioFactory = new GameStudios();
+    var gameStudio = gameStudioFactory.makeStudio(studioSelection);
+
+    
+    
+    
 
 })()

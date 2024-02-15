@@ -1,5 +1,5 @@
 import ReadLine from "readline";
-var rl = ReadLine.createInterface({input: process.stdin,output: process.stdout});
+
 
 
 export function showNumJSONOptions(jsonObject){
@@ -9,7 +9,15 @@ export function showNumJSONOptions(jsonObject){
     }
 }
 
+export function showNumJSONStringOptions(jsonObject){
+    const keys = Object.keys(jsonObject);
+    for(var x = 0; x < keys.length; x++){
+        console.log(`${x + 1} for ${getJSONValueByIndex(jsonObject, x + 1)}`)
+    }
+}
+
 export function userInput(message){
+    var rl = ReadLine.createInterface({input: process.stdin,output: process.stdout});
     return new Promise((resolve, reject) => {
         rl.question(message, (userInput) => {
             rl.close();

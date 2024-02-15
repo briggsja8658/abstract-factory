@@ -2,7 +2,7 @@
 import { gameTypes } from "../gVars.js";
 
 
-export class Games{
+export class GameTypes{
     constructor(){
         this.name = null;
         this.release = null;
@@ -18,31 +18,31 @@ export class Games{
     }
 }
 
-class FPS extends Games{
+class FPS extends GameTypes{
     constructor(){
         super();
     }
 }
 
-class RPG extends Games{
+class RPG extends GameTypes{
     constructor(){
         super();
     }
 }
 
-class JRPG extends Games{
+class JRPG extends GameTypes{
     constructor(){
         super();
     }
 }
 
-class Sim extends Games{
+class Sim extends GameTypes{
     constructor(){
         super();
     }
 }
 
-class Racing extends Games{
+class Racing extends GameTypes{
     constructor(){
         super();
     }
