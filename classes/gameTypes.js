@@ -1,5 +1,6 @@
 
-import { gameTypes } from "../gVars.js";
+import { gameTypes, gameNames, gamingPlatforms } from "../gVars.js";
+import * as Tools from "../tools.js"
 
 
 export class GameTypes{
@@ -7,7 +8,6 @@ export class GameTypes{
         this.name = null;
         this.release = null;
         this.platform = null;
-        this.studio = null;
     }
     makeGame(selectedGame){
         if(selectedGame === gameTypes.fps){ return new FPS() }
@@ -21,29 +21,44 @@ export class GameTypes{
 class FPS extends GameTypes{
     constructor(){
         super();
+        this.name = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random() * 30) + 1);
+        this.release = Math.floor(Math.random(2024 - 1990) + 1990);
+        this.platform = Tools.getJSONValueByIndex(gamingPlatforms, Math.floor(Math.random() * 29) + 1);
     }
 }
 
 class RPG extends GameTypes{
     constructor(){
         super();
+        super.name = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(30)));
+        super.release = Math.floor(Math.random(2024 - 1990) + 1990);
+        super.platform = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(29)));
     }
 }
 
 class JRPG extends GameTypes{
     constructor(){
         super();
+        super.name = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(30)));
+        super.release = Math.floor(Math.random(2024 - 1990) + 1990);
+        super.platform = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(29)));
     }
 }
 
 class Sim extends GameTypes{
     constructor(){
         super();
+        super.name = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(30)));
+        super.release = Math.floor(Math.random(2024 - 1990) + 1990);
+        super.platform = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(29)));
     }
 }
 
 class Racing extends GameTypes{
     constructor(){
         super();
+        super.name = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(30)));
+        super.release = Math.floor(Math.random(2024 - 1990) + 1990);
+        super.platform = Tools.getJSONValueByIndex(gameNames, Math.floor(Math.random(29)));
     }
 }
